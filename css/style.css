@@ -1,0 +1,138 @@
+@font-face {
+    font-family: 'Montserrat';
+    src: url('../fonts/Montserrat-VariableFont.ttf') format('truetype');
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Fraunces';
+    src: url('../fonts/Fraunces-VariableFont.ttf') format('truetype');
+    font-display: swap;
+}
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --cream: #f3eae3;
+    --green: #3d8168;
+    --dark-green: #1a4031;
+    --white: #ffffff;
+    --black: #1e2329;
+    --grey: #6c7289;
+
+    
+    --product-title-font: 700 2.4rem/1 'Fraunces', sans-serif;
+    --product-desc-font: 500 .9rem/175% 'Montserrat', sans-serif;
+    --product-price-font: 700 2.1rem/1 'Fraunces', sans-serif;
+    --product-previous-price-font: 500 .8rem/1 'Montserrat', sans-serif;
+    --button-font: 600 .9rem/1 'Montserrat', sans-serif;
+}
+
+.main {
+    min-height: 100vh;
+    background-color: var(--cream);
+    display: grid;
+    place-items: center;
+    padding-block: max(3rem, 5vh);
+}
+
+.product__card {
+    width: 90%;
+    max-width: 41rem;
+    display: flex;
+    background-color: var(--white);
+    border-radius: 12px;
+    overflow: hidden;
+}
+
+.product__image {
+    flex: 1;
+    min-width: 50%;
+    display: flex;
+}
+
+.product__image img{
+    max-width: 100%;
+    object-fit: cover;
+}
+
+.product__content {
+    flex: 1;
+    padding: clamp(1.8rem, 1vw + 1.75rem, 2.25rem);
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    justify-content: space-between;
+}
+
+.product__info {
+    display: flex;
+    flex-direction: column;
+    gap: .85rem;
+    justify-content: space-between;
+}
+
+.product__type {
+    font: var(--product-desc-font);
+    color: var(--grey);
+    text-transform: uppercase;
+    letter-spacing: .35rem;
+}
+
+.product__name {
+    font: var(--product-title-font);
+    color: var(--black);
+}
+
+.product__description {
+    font: var(--product-desc-font);
+    color: var(--grey);
+    letter-spacing: .01rem;
+}
+
+.product__sale-info {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.product__price {
+    font: var(--product-price-font);
+    color: var(--green);
+}
+
+.product__price--previous {
+    font: var(--product-previous-price-font);
+    color: var(--grey);
+    text-decoration: line-through;
+}
+
+.product__add-to-cart {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: .75rem;
+    padding: 1rem;
+    background-color: var(--green);
+    font: var(--button-font);
+    color: var(--white);
+    border: none;
+    outline: none;
+    cursor: pointer;
+    border-radius: 10px;
+    transition: background-color .4s ease;
+}
+
+.product__add-to-cart:hover {
+    background-color: var(--dark-green);
+}
+
+@media screen and (max-width: 36.875rem) {
+    .product__card {
+        flex-direction: column;
+    }
+}
